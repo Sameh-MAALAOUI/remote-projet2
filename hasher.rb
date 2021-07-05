@@ -10,3 +10,7 @@ post '/' do
   content_type 'text/plain'
   "#{Digest::SHA2.new().update(request.body.read)}"
 end
+
+get '/' do
+  "HASHER running on #{Socket.gethostname}\n"
+end
